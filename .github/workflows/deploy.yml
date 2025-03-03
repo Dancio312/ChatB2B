@@ -1,0 +1,25 @@
+name: Deploy Chatbot
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: Dancio312
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd /home/Dancio312/ChatB2B
+            git pull origin main
+            sudo systemctl restart chatbot.service
