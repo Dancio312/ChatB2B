@@ -16,9 +16,8 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SERVER_IP }}
-          # Jeśli korzystasz z innego portu niż 22 (np. w tunelu ngrok), ustaw go poniżej:
-          # port: ${{ secrets.SERVER_PORT }}
+          host: ${{ secrets.SERVER_IP }}    # Upewnij się, że sekret SERVER_IP jest ustawiony (np. "6.tcp.eu.ngrok.io")
+          port: ${{ secrets.SERVER_PORT }}    # Ustawiony wcześniej, np. "14026"
           username: daniel-wardak
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
