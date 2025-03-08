@@ -15,11 +15,10 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SERVER_IP }}
-          port: ${{ secrets.SERVER_PORT }}
+          host: ${{ secrets.SERVER_IP }}  # np. 5.tcp.eu.ngrok.io
+          port: ${{ secrets.SERVER_PORT }} # np. 17050
           username: daniel-wardak
           key: ${{ secrets.SERVER_SSH_KEY }}
-          args: "-o StrictHostKeyChecking=no -o IdentitiesOnly=yes"
           script: |
             cd /home/daniel-wardak/ChatB2B
             git pull origin main
