@@ -1,0 +1,10 @@
+t=2025-03-08T19:26:59+0100 lvl=info msg="no configuration paths supplied"
+t=2025-03-08T19:26:59+0100 lvl=info msg="using configuration at default config path" path=/home/daniel-wardak/.config/ngrok/ngrok.yml
+t=2025-03-08T19:26:59+0100 lvl=info msg="open config file" path=/home/daniel-wardak/.config/ngrok/ngrok.yml err=nil
+t=2025-03-08T19:26:59+0100 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2025-03-08T19:27:00+0100 lvl=info msg="client session established" obj=tunnels.session
+t=2025-03-08T19:27:00+0100 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2025-03-08T19:27:00+0100 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=//localhost:22 url=tcp://0.tcp.eu.ngrok.io:14450
+t=2025-03-08T19:27:04+0100 lvl=warn msg="failed to check for update" obj=updater err="Post \"https://update.equinox.io/check\": context deadline exceeded"
+t=2025-03-08T19:31:11+0100 lvl=info msg="join connections" obj=join id=e779a6a48b4e l=127.0.0.1:22 r=37.30.6.48:31458
+t=2025-03-08T19:31:24+0100 lvl=info msg="join connections" obj=join id=85e071d53848 l=127.0.0.1:22 r=159.65.226.243:44418
