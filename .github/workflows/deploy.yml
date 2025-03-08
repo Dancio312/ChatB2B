@@ -2,22 +2,21 @@ name: Deploy Chatbot
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SERVER_IP }}       # np. "6.tcp.eu.ngrok.io"
-          port: ${{ secrets.SERVER_PORT }}       # np. "14026"
+          host: ${{ secrets.SERVER_IP }}
+          port: ${{ secrets.SERVER_PORT }}
           username: daniel-wardak
           key: ${{ secrets.SERVER_SSH_KEY }}
           args: "-o StrictHostKeyChecking=no -o IdentitiesOnly=yes"
@@ -25,4 +24,3 @@ jobs:
             cd /home/daniel-wardak/ChatB2B
             git pull origin main
             sudo systemctl restart chatbot.service
-
