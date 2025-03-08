@@ -15,10 +15,10 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: "5.tcp.eu.ngrok.io"       # Zastąp tą wartością, jeśli Ngrok poda inny adres
-          port: "19130"                   # Zastąp numerem portu z wyniku Ngrok
-          username: "daniel-wardak"
-          key: ${{ secrets.SERVER_SSH_KEY }}  # Klucz prywatny trzymany jako sekret (zalecane!)
+          host: ${{ secrets.SERVER_IP }}       # "5.tcp.eu.ngrok.io"
+          port: ${{ secrets.SERVER_PORT }}       # "19130"
+          username: daniel-wardak
+          key: ${{ secrets.SERVER_SSH_KEY }}
           args: "-o StrictHostKeyChecking=no -o IdentitiesOnly=yes"
           script: |
             cd /home/daniel-wardak/ChatB2B
