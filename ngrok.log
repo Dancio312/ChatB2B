@@ -1560,3 +1560,32 @@ t=2025-03-13T16:31:45+0100 lvl=info msg="client session established" obj=tunnels
 t=2025-03-13T16:31:45+0100 lvl=info msg="tunnel session started" obj=tunnels.session
 t=2025-03-13T16:31:46+0100 lvl=info msg="started tunnel" obj=tunnels name=ssh addr=//localhost:22 url=tcp://2.tcp.ngrok.io:10671
 t=2025-03-13T16:31:48+0100 lvl=info msg=start pg=/grpc/agent.Web/State id=c5738e600b2f892d
+t=2025-03-13T16:59:08+0100 lvl=info msg="received stop request" obj=app stopReq="{err:<nil> restart:false}"
+t=2025-03-13T16:59:08+0100 lvl=info msg="session closing" obj=tunnels.session err=nil
+t=2025-03-13T16:59:09+0100 lvl=info msg="open config file" path=/home/daniel-wardak/.config/ngrok/ngrok.yml err=nil
+t=2025-03-13T16:59:09+0100 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2025-03-13T16:59:10+0100 lvl=info msg="client session established" obj=tunnels.session
+t=2025-03-13T16:59:10+0100 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2025-03-13T16:59:10+0100 lvl=info msg="started tunnel" obj=tunnels name=ssh addr=//localhost:22 url=tcp://0.tcp.ngrok.io:12051
+t=2025-03-13T16:59:12+0100 lvl=info msg=start pg=/grpc/agent.Web/State id=cb5bdd27dd59863b
+t=2025-03-13T16:59:13+0100 lvl=info msg="received stop request" obj=app stopReq="{err:<nil> restart:false}"
+t=2025-03-13T16:59:13+0100 lvl=info msg="session closing" obj=tunnels.session err=nil
+t=2025-03-13T16:59:13+0100 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=0384a719320f err="reconnecting session closed"
+t=2025-03-13T16:59:13+0100 lvl=info msg="failed to accept connection: Listener closed" obj=tunnels.session clientid=7cf5b01fb5f06dffa9a13f98f29b2ce6
+t=2025-03-13T16:59:13+0100 lvl=warn msg="Stopping forwarder" name=ssh acceptErr="failed to accept connection: Listener closed"
+t=2025-03-13T16:59:13+0100 lvl=warn msg="Error restarting forwarder" name=ssh err="failed to start tunnel: session closed"
+t=2025-03-13T16:59:13+0100 lvl=info msg="no more state changes" obj=tunnels.session
+t=2025-03-13T16:59:13+0100 lvl=info msg="open config file" path=/home/daniel-wardak/.config/ngrok/ngrok.yml err=nil
+t=2025-03-13T16:59:13+0100 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2025-03-13T16:59:14+0100 lvl=info msg="client session established" obj=tunnels.session
+t=2025-03-13T16:59:14+0100 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2025-03-13T16:59:15+0100 lvl=info msg="started tunnel" obj=tunnels name=ssh addr=//localhost:22 url=tcp://6.tcp.ngrok.io:18838
+t=2025-03-13T16:59:17+0100 lvl=info msg=start pg=/grpc/agent.Web/State id=8f48d8d727910133
+t=2025-03-13T16:59:25+0100 lvl=info msg="received stop request" obj=app stopReq="{err:<nil> restart:false}"
+t=2025-03-13T16:59:25+0100 lvl=info msg="session closing" obj=tunnels.session err=nil
+t=2025-03-13T16:59:25+0100 lvl=info msg="open config file" path=/home/daniel-wardak/.config/ngrok/ngrok.yml err=nil
+t=2025-03-13T16:59:25+0100 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2025-03-13T16:59:26+0100 lvl=info msg="client session established" obj=tunnels.session
+t=2025-03-13T16:59:26+0100 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2025-03-13T16:59:27+0100 lvl=info msg="started tunnel" obj=tunnels name=ssh addr=//localhost:22 url=tcp://4.tcp.ngrok.io:13637
+t=2025-03-13T16:59:29+0100 lvl=info msg=start pg=/grpc/agent.Web/State id=db62ca717a620f0b
