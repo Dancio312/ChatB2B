@@ -20,12 +20,13 @@ jobs:
       - name: SSH deploy
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: "100.117.249.28"             # Tailscale IP Twojej maszyny
+          host: "100.117.249.28"             # Tailscale IP twojej maszyny
           username: "daniel-wardak"
           port: 22
-          key: ${{ secrets.SSH_PRIVATE_KEY }} # prywatny klucz, którego publiczna część jest w authorized_keys
+          key: ${{ secrets.SSH_PRIVATE_KEY }} # prywatny klucz do SSH
           script: |
             set -euxo pipefail
             cd /home/daniel-wardak/ChatB2B
             git pull --ff-only
             sudo /usr/bin/systemctl restart chatbot.service
+
