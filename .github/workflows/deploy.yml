@@ -1,26 +1,31 @@
-name: Deploy Chatbot
+name: Deploy via Tailscale SSH
 
 on:
   push:
-    branches: [main]
+    branches: [ "main" ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@master
+      - name: Set up Tailscale
+        uses: tailscale/github-action@v2
         with:
-          host: ${{ secrets.SERVER_IP }}       # "4.tcp.eu.ngrok.io"
-          port: ${{ secrets.SERVER_PORT }}       # "13637"
-          username: daniel-wardak
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            cd /home/daniel-wardak/ChatB2B
-            git pull origin main
-            sudo systemctl restart chatbot.service
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
 
+      - name: SSH deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: "100.117.249.28"             # Tailscale IP Twojej maszyny
+          username: "daniel-wardak"
+          port: 22
+          key: ${{ secrets.SSH_PRIVATE_KEY }} # prywatny klucz, którego publiczna część jest w authorized_keys
+          script: |
+            set -euxo pipefail
+            cd /home/daniel-wardak/ChatB2B
+            git pull --ff-only
+            sudo /usr/bin/systemctl restart chatbot.service
